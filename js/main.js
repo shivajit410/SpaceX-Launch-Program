@@ -10,48 +10,7 @@
                     window.location.href.lastIndexOf("?") + 1
                 );
                 fetchData(param);
-
-                var url = window.location.href
-                    .slice(window.location.href.lastIndexOf("?") + 1)
-                    .split("&");
-                url.forEach(function (value, index) {
-                    if (value.indexOf("launch_success") >= 0) {
-                        $(
-                            "input[type=radio][name='launch_success'][value='" +
-                            value.slice(value.indexOf("=") + 1) +
-                            "']"
-                        ).prop("checked", true);
-                        $(
-                            "input[type=radio][name='launch_success'][value='" +
-                            value.slice(value.indexOf("=") + 1) +
-                            "']"
-                        ).data("waschecked", true);
-                    }
-                    if (value.indexOf("land_success") >= 0) {
-                        $(
-                            "input[type=radio][name='land_success'][value='" +
-                            value.slice(value.indexOf("=") + 1) +
-                            "']"
-                        ).prop("checked", true);
-                        $(
-                            "input[type=radio][name='land_success'][value='" +
-                            value.slice(value.indexOf("=") + 1) +
-                            "']"
-                        ).data("waschecked", true);
-                    }
-                    if (value.indexOf("launch_year") >= 0) {
-                        $(
-                            "input[type=radio][name='launch_year'][value='" +
-                            value.slice(value.indexOf("=") + 1) +
-                            "']"
-                        ).prop("checked", true);
-                        $(
-                            "input[type=radio][name='launch_year'][value='" +
-                            value.slice(value.indexOf("=") + 1) +
-                            "']"
-                        ).data("waschecked", true);
-                    }
-                });
+                
             } else {
                 fetchData();
             }
